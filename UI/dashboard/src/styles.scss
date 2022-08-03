@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+@import '_glyphicons';
+@import "~bootstrap/dist/css/bootstrap.css";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/*card.component.css*/
+.more-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+ }
+ 
+ .dashboard-card {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+ }
+ 
+ 
+ .dashboard-card-content {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100%;
+    justify-content: center;
+    align-items: stretch;
+ }
+ 
+ mat-card {
+    display: flex;
+    flex-direction: column;
+ }
+
+.chartContainer canvas {
+    max-height: 250px;
+    width: auto;
+}
+
+.chartContainer{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.marginTop70{
+
+   margin-top: 50px;
+ }

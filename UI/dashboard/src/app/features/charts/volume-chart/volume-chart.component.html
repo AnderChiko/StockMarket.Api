@@ -1,0 +1,16 @@
+<div class="flex">
+  <div class="flex-item">
+    <div style="display: block;">
+      <div class="chart-wrapper" *ngIf="labels.length > 0">
+        <canvas baseChart width="400" height="400" 
+        [type]="'line'"
+        [data]="lineChartData"
+        [options]="lineChartOptions"
+        [legend]="lineChartLegend">
+      </canvas>
+    </div>
+    </div>
+  </div>
+  <div class="flex-item">       
+  </div>
+</div>

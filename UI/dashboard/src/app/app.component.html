@@ -1,0 +1,27 @@
+<app-main></app-main>
+
+<header>
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark mb-3 fixed-top">
+      <div class="container">
+          <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">              
+              <a class="navbar-title" href="index.html">Dashboard application</a>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                  aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>         
+      </div>
+  </nav>
+</header>
+
+<div class="row ">
+  <div class="col-md-8 mx-md-auto">
+     <router-outlet></router-outlet>
+  </div>
+</div>
+
+<footer class="footer small text-center">
+ <p class="pt-2">Copyright &copy;{{year}}. All Rights Reserved, Inc. &middot;<a href="" target="_blank">Terms of use </a>&middot;  
+    </p>
+</footer>
+

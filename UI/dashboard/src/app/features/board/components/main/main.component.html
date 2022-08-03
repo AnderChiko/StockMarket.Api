@@ -1,0 +1,63 @@
+<div class="card">
+    <div class="card-header bg-secondary">       
+    </div>
+    <div class="card-body">
+        <div class="mx-4 marginTop70"> 
+            <div class="container-fluid">
+                <div class="flex-item">                    
+               </div>
+                <div class="row">          
+            <div class="col-md-6">
+                <div class="form-row border rounded table-responsive-sm">
+                    <table class="table table-borderless table-hover">
+                        <thead>
+                            <tr class="border-bottom">
+                                <th>company</th>                                
+                                <th>value</th>
+                                <th>change</th>
+                                <th>volume</th>
+                                <th>high</th>
+                                <th>low</th>                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngIf="data.length == 0">
+                                <td colspan="7">No data to display</td>
+                            </tr>
+                            <tr class="border-bottom" *ngFor="let data of data | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; index as i" (click)="handleSelectRowClick(i)">
+                                <td>{{data.company}}</td>                                
+                                <td>{{data.dailyTimeSeries[data.dailyTimeSeries.length -1].timeSeries.open}}</td>
+                                <td><i class="fas fa-arrow-down"></i>{{data.dailyTimeSeries[data.dailyTimeSeries.length -1].timeSeries.close - data.dailyTimeSeries[data.dailyTimeSeries.length -1].timeSeries.open}}</td>
+                                <td>{{data.dailyTimeSeries[data.dailyTimeSeries.length -1].timeSeries.volume}}</td>
+                                <td>{{data.dailyTimeSeries[data.dailyTimeSeries.length -1].timeSeries.high}}</td>
+                                <td>{{data.dailyTimeSeries[data.dailyTimeSeries.length -1].timeSeries.low}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <ngb-pagination class="pl-1" [collectionSize]="data.length" [(page)]="page" [maxSize]="pageSize" [rotate]="true" [ellipses]="false" [boundaryLinks]="true"></ngb-pagination>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="form-row" > 
+                    <app-volume-chart *ngIf="data.length > 0"   [repo] = "data"></app-volume-chart>                  
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="my-container">
+    <ng-template #customLoadingTemplate>
+      <div class="custom-class">
+      </div>
+    </ng-template>
+    <ngx-loading [show]="loading" [template]="customLoadingTemplate"></ngx-loading>
+  </div>
+
+

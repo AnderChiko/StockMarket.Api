@@ -1,0 +1,6 @@
+{
+    "apiBaseUrl": "https://localhost:44368/api/",
+    "defaultErrorMessage": "A server error occured, please contact your administrator",
+    "loginTimeoutMilliseconds": 20000,
+    "rapidapiUrl" : "https://alpha-vantage.p.rapidapi.com/query"
+}
