@@ -10,9 +10,13 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using StockMarket.Api.Handler;
+using StockMarket.Core.Services;
+using StockMarket.Interfaces.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace StockMarket.Api
@@ -36,6 +40,16 @@ namespace StockMarket.Api
             services.AddControllers();
 
             services.AddCors();
+
+            services.AddMemoryCache();
+
+            //to do : to test rate limit on class out going calls
+            //services.AddHttpClient<IAlphaVantageManager, AlphaVantageManager>()
+            //       .AddHttpMessageHandler(() =>
+            //               new RateLimitHttpMessageHandler(
+            //                    limitCount: 5,
+            //                    limitTime: TimeSpan.FromMinutes(1)))
+            //            .SetHandlerLifetime(Timeout.InfiniteTimeSpan);
 
             ConfigureCorsServices(services);
 
